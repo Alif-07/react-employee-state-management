@@ -9,7 +9,10 @@ const Employees = () => {
 	useEffect(() => {
 		fetch(`/employeeData.json`)
 			.then((res) => res.json())
-			.then((data) => setEmployees(data));
+			.then((data) => {
+				setEmployees(data);
+				setDisplayEmployees(data);
+			});
 	}, []);
 
 	const handleSearch = (event) => {
